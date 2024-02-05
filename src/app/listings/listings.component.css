@@ -1,0 +1,36 @@
+.listing {
+    background-color: #a11dc520;
+    border-radius: 20px;
+    margin: 20px 0;
+    padding-bottom: 30px;
+}
+
+.listing img {
+    max-height: 200px;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.listing h2 {
+    margin: 0;
+    padding: 10px;
+    color: #a11dc5;
+}
+
+.listing p {
+    padding: 10px;
+    margin: 0;
+}
+
+.listing svg {
+    color: #a11dc5;
+}
+
+.listing a {
+    padding: 10px;
+    margin: 0;
+    text-decoration: none;
+    color: #a11dc5;
+    font-weight: bold;
+}

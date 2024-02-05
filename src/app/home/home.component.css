@@ -1,0 +1,46 @@
+input[type="text"] {
+    border: solid 1px #a01dc5;
+    padding: 10px;
+    border-radius: 8px;
+    margin-right: 4px;
+    display: inline-block;
+    width: 30%;
+}
+
+input[type="text"]:focus {
+    outline-color: #8e1bbf;
+}
+
+button {
+    padding: 10px;
+    border: solid 1px #a01dc5;
+    background: #a01dc5;
+    color: white;
+    border-radius: 8px;
+}
+
+button:hover {
+    background: #8e1bbf;
+    cursor: pointer;
+}
+
+
+@media (min-width: 478px) {
+    .listings-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .listings-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .listings-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

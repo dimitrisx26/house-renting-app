@@ -1,0 +1,9 @@
+header {
+    padding: 12px;
+    box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 12px;
+}
+
+.content {
+    padding: 12px;
+}
