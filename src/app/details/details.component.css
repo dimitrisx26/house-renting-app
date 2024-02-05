@@ -43,7 +43,7 @@
 .details a {
     padding: 10px;
     margin: 0;
-    text-decoration: none;
+    text-decoration: underline;
     color: #a11dc5;
     font-weight: bold;
 }
