@@ -38,8 +38,8 @@ export class HousingService {
     },
     {
       id: 4,
-      name: 'Downtown Condo',
-      city: 'Los Angeles',
+      name: 'Downtown Condo ',
+      city: 'Glyfada',
       photo:
         'https://images.pexels.com/photos/323775/pexels-photo-323775.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       price: 200,
