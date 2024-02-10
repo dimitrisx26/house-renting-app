@@ -1,13 +1,13 @@
 .listing {
     background-color: #a11dc520;
     border-radius: 20px;
-    margin: 20px 0;
+    margin-bottom: 20px;
     padding-bottom: 30px;
     max-width: 420px;
 }
 
 .listing img {
-    max-height: 200px;
+    height: 200px;
     width: 100%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;

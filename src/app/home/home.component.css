@@ -24,6 +24,10 @@ button:hover {
     cursor: pointer;
 }
 
+.listings-grid {
+    padding: 20px 0;
+}
+
 
 @media (min-width: 478px) {
     .listings-grid {

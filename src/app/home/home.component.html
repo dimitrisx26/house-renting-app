@@ -1,7 +1,12 @@
 <section>
-  <form>
-    <input type="text" placeholder="Filter by City" #filter />
-    <button type="button" (click)="filterResults(filter.value)">Filter</button>
+  <form (ngSubmit)="filterResults()">
+    <input
+      type="text"
+      name="filter"
+      placeholder="Filter by City"
+      [(ngModel)]="filterText"
+    />
+    <button type="submit">Filter</button>
   </form>
 </section>
 <section class="listings-grid">
