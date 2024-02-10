@@ -100,8 +100,12 @@ form button:disabled {
     cursor: not-allowed;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1024px) {
     .details-container {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .details img {
+        min-width: 450px;
     }
 }

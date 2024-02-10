@@ -1,54 +1,46 @@
-<div class="details-flex">
-  <section class="details-container">
-    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+<div class="add-flex">
+  <section class="add-container">
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
       <h3>Add Listing</h3>
       <label for="name">Name</label>
       <input
         type="text"
         id="name"
         formControlName="name"
-        placeholder="John Doe"
+        placeholder="Apartment"
       />
-      <label for="email">Email</label>
+      <label for="city">City</label>
       <input
-        type="email"
-        id="email"
-        formControlName="email"
-        placeholder="example@example.com"
+        type="text"
+        id="city"
+        formControlName="city"
+        placeholder="Athens"
       />
-      <label for="message">Message</label>
-      <textarea
-        id="message"
-        formControlName="message"
-        placeholder="Your message goes here."
-      ></textarea>
-      <button type="submit" [disabled]="!contactForm.valid">Apply now</button>
+      <label for="phot">Photo Url</label>
+      <input
+        type="text"
+        id="photo"
+        formControlName="photo"
+        placeholder="Photo"
+      />
+      <label for="price">Price</label>
+      <input
+        type="number"
+        id="price"
+        formControlName="price"
+        placeholder="100"
+      />
+      <div class="checkbox">
+        <label for="wifi"
+          >Wifi <input type="checkbox" id="wifi" formControlName="wifi" />
+        </label>
+        <label for="laundry"
+          >Laundry
+          <input type="checkbox" id="laundry" formControlName="laundry" />
+        </label>
+      </div>
+
+      <button type="submit" [disabled]="!addForm.valid">Save</button>
     </form>
-    <div class="details">
-      <img
-        [src]="listing?.photo"
-        loading="lazy"
-        alt="This is the {{ listing?.name }} in {{ listing?.city }}."
-      />
-      <h2>{{ listing?.name }}</h2>
-      <p>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          class="bi bi-geo-alt-fill"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"
-          /></svg
-        >{{ listing?.city }}
-      </p>
-      <h3>About this house</h3>
-      <p>Price: {{ listing?.price }}/m</p>
-      <p>Laundry: {{ listing?.laundry }}</p>
-      <p>Wi-Fi: {{ listing?.wifi }}</p>
-    </div>
   </section>
 </div>

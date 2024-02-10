@@ -18,7 +18,7 @@ button:hover {
     cursor: pointer;
 }
 
-svg {
+button svg {
     margin-right: 8px;
 }
 
@@ -41,28 +41,71 @@ svg {
     align-items: center;
     background-color: #a11dc520;
     border-radius: 20px;
+    padding: 8px;
     padding-bottom: 30px;
     max-width: 550px;
-    padding: 8px;
+    max-height: 500px;
+    overflow: auto;
 }
 
-.edit img {
-    max-height: 300px;
-    width: 100%;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+.edit ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.edit h2,
-.edit h3 {
+.edit li {
+    margin: 0;
+}
+
+.edit li a {
+    text-decoration: none;
+}
+
+.listing-select {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header header"
+        "p1 img"
+        "p2 img";
+    padding: 20px;
+    background-color: #a11dc520;
+    border-radius: 20px;
+}
+
+.edit h3,
+.edit h4 {
     margin: 0;
     padding: 10px;
     color: #a11dc5;
 }
 
+.edit h4 {
+    grid-area: header;
+}
+
+.edit img {
+    max-height: 70px;
+    width: 140px;
+    border-radius: 5px;
+    grid-area: img;
+}
+
 .edit p {
     padding: 10px;
     margin: 0;
+    color: black;
+    font-weight: normal;
+}
+
+.p1 {
+    grid-area: p1;
+}
+
+.p2 {
+    grid-area: p2;
 }
 
 .edit svg {
@@ -140,8 +183,16 @@ form button:disabled {
     cursor: not-allowed;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1024px) {
     .edit-container {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .edit {
+        width: 500px;
+    }
+
+    form {
+        width: 500px;
     }
 }

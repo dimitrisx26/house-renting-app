@@ -1,11 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import {
-  ActivatedRoute,
-  RouterLink,
-  RouterModule,
-  RouterOutlet,
-} from '@angular/router';
+import { Router, RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 import { HousingService } from '../housing.service';
 import { Listing } from '../listing';
 import {
@@ -29,25 +24,33 @@ import {
   styleUrl: './add-listing.component.css',
 })
 export class AddListingComponent {
-  listing: Listing | undefined;
+  listings: Listing[] | undefined;
 
-  contactForm: FormGroup = new FormGroup({
+  addForm: FormGroup = new FormGroup({
     name: new FormControl('', Validators.required),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    message: new FormControl('', Validators.required),
+    city: new FormControl('', Validators.required),
+    photo: new FormControl('', Validators.required),
+    price: new FormControl('', [Validators.required, Validators.min(1)]),
+    wifi: new FormControl(''),
+    laundry: new FormControl(''),
   });
 
-  constructor(private route: ActivatedRoute, private housing: HousingService) {
-    const id = Number(this.route.snapshot.params['id']);
-    this.listing = this.housing.getListingById(id);
-  }
+  constructor(private housing: HousingService, private router: Router) {}
+
+  ngOnInit() {}
 
   onSubmit() {
-    if (this.contactForm.valid) {
-      console.log('Form submitted');
-      console.log('Name: ' + this.contactForm.get('name')?.value);
-      console.log('Email: ' + this.contactForm.get('email')?.value);
-      console.log('Message: ' + this.contactForm.get('message')?.value);
+    if (this.addForm.valid) {
+
+      const name = this.addForm.value.name;
+      const city = this.addForm.value.city;
+      const photo = this.addForm.value.photo;
+      const price = this.addForm.value.price;
+      const wifi = this.addForm.value.wifi;
+      const laundry = this.addForm.value.laundry;
+
+      this.housing.addListing(name, city, photo, price, wifi, laundry);
+      this.router.navigate(['/edit']);
     }
   }
 }

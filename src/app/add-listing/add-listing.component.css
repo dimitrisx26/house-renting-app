@@ -1,51 +1,23 @@
-.details-flex {
+button:hover {
+    background: #8e1bbf;
+    cursor: pointer;
+}
+
+button svg {
+    margin-right: 8px;
+}
+
+.add-flex {
+    margin: 20px 0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.details-container {
+.add-container {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
-}
-
-.details {
-    background-color: #a11dc520;
-    border-radius: 20px;
-    padding-bottom: 30px;
-    max-width: 550px;
-}
-
-.details img {
-    max-height: 300px;
-    width: 100%;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
-
-.details h2,
-.details h3 {
-    margin: 0;
-    padding: 10px;
-    color: #a11dc5;
-}
-
-.details p {
-    padding: 10px;
-    margin: 0;
-}
-
-.details svg {
-    color: #a11dc5;
-}
-
-.details a {
-    padding: 10px;
-    margin: 0;
-    text-decoration: underline;
-    color: #a11dc5;
-    font-weight: bold;
 }
 
 form {
@@ -71,17 +43,28 @@ form input {
     min-width: 250px;
 }
 
-form textarea {
+form .checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+form .checkbox label {
     margin: 10px;
-    padding: 10px;
+}
+
+form .checkbox label input {
+    margin: 0px;
+    padding: 0px;
     border-radius: 10px;
     border: none;
-    min-width: 250px;
+    min-width: 0;
 }
 
 form button {
-    margin: 10px;
-    padding: 10px;
+    margin: 20px;
+    padding: 10px 26px;
     border-radius: 10px;
     border: none;
     background-color: #a11dc5;
@@ -100,8 +83,8 @@ form button:disabled {
     cursor: not-allowed;
 }
 
-@media (min-width: 1300px) {
-    .details-container {
-        grid-template-columns: 1fr 1fr;
+@media (min-width: 1024px) {
+    form {
+        width: 500px;
     }
 }

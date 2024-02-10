@@ -88,7 +88,17 @@ export class HousingService {
     return this.listingsList.find((listing) => listing.id === id);
   }
 
-  addListing(listing: Listing) {
+  addListing(name: string, city: string, photo: string, price: number, wifi: boolean, laundry: boolean) {
+    const id = this.listingsList.length + 2;
+    const listing: Listing = {
+      id,
+      name,
+      city,
+      photo,
+      price,
+      wifi,
+      laundry,
+    };
     this.listingsList.push(listing);
   }
 

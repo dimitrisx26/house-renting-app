@@ -37,7 +37,7 @@ export class EditListingComponent {
     name: new FormControl('', Validators.required),
     city: new FormControl('', Validators.required),
     photo: new FormControl('', Validators.required),
-    price: new FormControl('', Validators.required),
+    price: new FormControl('', [Validators.required, Validators.min(1)]),
     wifi: new FormControl(''),
     laundry: new FormControl(''),
   });
