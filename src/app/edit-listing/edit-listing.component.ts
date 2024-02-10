@@ -79,4 +79,15 @@ export class EditListingComponent {
       this.router.navigate(['/edit']);
     }
   }
+
+  deleteListing() {
+    const confirmation = window.confirm(
+      'Are you sure you want to delete this listing?'
+    );
+    if (confirmation) {
+      const id = Number(this.route.snapshot.params['id']);
+      this.housing.deleteListing(id);
+      this.router.navigate(['/edit']);
+    }
+  }
 }

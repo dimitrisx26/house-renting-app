@@ -114,4 +114,9 @@ export class HousingService {
       laundry,
     };
   }
+
+  deleteListing(id: number) {
+    const index = this.listingsList.findIndex((listing) => listing.id === id);
+    this.listingsList.splice(index, 1);
+  }
 }

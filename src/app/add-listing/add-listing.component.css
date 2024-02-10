@@ -83,6 +83,14 @@ form button:disabled {
     cursor: not-allowed;
 }
 
+form button.cancelBtn {
+    background-color: #959595;
+}
+
+form button.cancelBtn:hover {
+    background-color: #7a7a7a;
+}
+
 @media (min-width: 1024px) {
     form {
         width: 500px;

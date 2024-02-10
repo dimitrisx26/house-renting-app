@@ -87,7 +87,10 @@
         </label>
       </div>
 
-      <button type="submit" [disabled]="!editForm.valid">Save</button>
+      <div class="btnContainer">
+        <button type="submit" [disabled]="!editForm.valid">Save</button>
+        <button type="button" class="deleteBtn" (click)="deleteListing()">Delete</button>
+      </div>
     </form>
   </section>
 </div>

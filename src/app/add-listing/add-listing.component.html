@@ -40,7 +40,10 @@
         </label>
       </div>
 
-      <button type="submit" [disabled]="!addForm.valid">Save</button>
+      <div>
+        <button type="submit" [disabled]="!addForm.valid">Save</button>
+        <button type="button" class="cancelBtn" [routerLink]="'/edit'">Cancel</button>
+      </div>
     </form>
   </section>
 </div>
