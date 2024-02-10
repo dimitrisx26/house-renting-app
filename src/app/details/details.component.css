@@ -100,7 +100,7 @@ form button:disabled {
     cursor: not-allowed;
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 1000px) {
     .details-container {
         grid-template-columns: 1fr 1fr;
     }

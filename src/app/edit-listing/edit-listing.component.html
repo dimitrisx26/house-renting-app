@@ -15,3 +15,60 @@
     >Add Listing
   </button></a
 >
+
+<div class="edit-flex">
+  <section class="edit-container">
+    <div class="edit">
+      <h3>Listings</h3>
+      <ul>
+        @for (listing of listings; track $index) {
+        <li>
+          <a [routerLink]="['/edit', listing.id]">{{ listing.name }}</a>
+        </li>
+        }
+      </ul>
+    </div>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+      <h3>Edit Listing</h3>
+      <label for="name">Name</label>
+      <input
+        type="text"
+        id="name"
+        formControlName="name"
+        placeholder="Apartment"
+      />
+      <label for="city">City</label>
+      <input
+        type="text"
+        id="city"
+        formControlName="city"
+        placeholder="Athens"
+      />
+      <label for="phot">Photo</label>
+      <input
+        type="text"
+        id="photo"
+        formControlName="photo"
+        placeholder="Photo"
+      />
+      <label for="price">Price</label>
+      <input
+        type="number"
+        id="price"
+        formControlName="price"
+        placeholder="100"
+      />
+      <div class="checkbox">
+        <label for="wifi"
+          >Wifi <input type="checkbox" id="wifi" formControlName="wifi" />
+        </label>
+        <label for="laundry"
+          >Laundry
+          <input type="checkbox" id="laundry" formControlName="laundry" />
+        </label>
+      </div>
+
+      <button type="submit" [disabled]="!editForm.valid">Save</button>
+    </form>
+  </section>
+</div>
