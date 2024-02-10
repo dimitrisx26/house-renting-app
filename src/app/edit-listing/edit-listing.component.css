@@ -102,9 +102,13 @@ form input {
 
 form .checkbox {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+}
+
+form .checkbox label {
+    margin: 10px;
 }
 
 form .checkbox label input {
