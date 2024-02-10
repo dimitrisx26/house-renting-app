@@ -78,7 +78,9 @@ export class HousingService {
     },
   ];
 
-  constructor() {}
+  constructor() {
+    this.loadState();
+  }
 
   getListings(): Listing[] {
     return this.listingsList;
@@ -88,7 +90,14 @@ export class HousingService {
     return this.listingsList.find((listing) => listing.id === id);
   }
 
-  addListing(name: string, city: string, photo: string, price: number, wifi: boolean, laundry: boolean) {
+  addListing(
+    name: string,
+    city: string,
+    photo: string,
+    price: number,
+    wifi: boolean,
+    laundry: boolean
+  ) {
     const id = this.listingsList.length + 2;
     const listing: Listing = {
       id,
@@ -100,9 +109,18 @@ export class HousingService {
       laundry,
     };
     this.listingsList.push(listing);
+    this.saveState();
   }
 
-  updateListing(id: number, name: string, city: string, photo: string, price: number, wifi: boolean, laundry: boolean) {
+  updateListing(
+    id: number,
+    name: string,
+    city: string,
+    photo: string,
+    price: number,
+    wifi: boolean,
+    laundry: boolean
+  ) {
     const index = this.listingsList.findIndex((listing) => listing.id === id);
     this.listingsList[index] = {
       id,
@@ -113,10 +131,23 @@ export class HousingService {
       wifi,
       laundry,
     };
+    this.saveState();
   }
 
   deleteListing(id: number) {
     const index = this.listingsList.findIndex((listing) => listing.id === id);
     this.listingsList.splice(index, 1);
+    this.saveState();
+  }
+
+  private saveState(): void {
+    localStorage.setItem('listings', JSON.stringify(this.listingsList));
+  }
+
+  private loadState(): void {
+    const listingsInStorage = localStorage.getItem('listings');
+    if (listingsInStorage) {
+      this.listingsList = JSON.parse(listingsInStorage);
+    }
   }
 }
