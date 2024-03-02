@@ -1,30 +1,37 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { DetailsComponent } from './details/details.component';
-import { EditListingComponent } from './edit-listing/edit-listing.component';
-import { AddListingComponent } from './add-listing/add-listing.component';
 
 export const routes: Routes = [
   { path: '', title: 'Rently - Home', component: HomeComponent },
   {
     path: 'details/:id',
     title: 'Rently - Details',
-    component: DetailsComponent,
+    loadComponent: () =>
+      import('./details/details.component').then((m) => m.DetailsComponent),
   },
   {
     path: 'edit',
     title: 'Rently - Edit Listing',
-    component: EditListingComponent,
+    loadComponent: () =>
+      import('./edit-listing/edit-listing.component').then(
+        (m) => m.EditListingComponent,
+      ),
   },
   {
     path: 'edit/:id',
     title: 'Rently - Edit Listing',
-    component: EditListingComponent,
+    loadComponent: () =>
+      import('./edit-listing/edit-listing.component').then(
+        (m) => m.EditListingComponent,
+      ),
   },
   {
     path: 'add',
     title: 'Rently - Add Listing',
-    component: AddListingComponent,
+    loadComponent: () =>
+      import('./add-listing/add-listing.component').then(
+        (m) => m.AddListingComponent,
+      ),
   },
   { path: '**', redirectTo: '' },
 ];
