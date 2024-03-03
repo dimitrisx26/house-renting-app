@@ -1,6 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router, RouterLink, RouterModule, RouterOutlet } from '@angular/router';
+import {
+  Router,
+  RouterLink,
+  RouterModule,
+  RouterOutlet,
+} from '@angular/router';
 import { HousingService } from '../housing.service';
 import { Listing } from '../listing';
 import {
@@ -35,13 +40,22 @@ export class AddListingComponent {
     laundry: new FormControl(''),
   });
 
-  constructor(private housing: HousingService, private router: Router) {}
+  constructor(
+    private housing: HousingService,
+    private router: Router,
+  ) {}
 
   ngOnInit() {}
 
+  updateImagePreview() {
+    let photoControl = this.addForm.get('photo');
+    if (photoControl) {
+      photoControl.updateValueAndValidity();
+    }
+  }
+
   onSubmit() {
     if (this.addForm.valid) {
-
       const name = this.addForm.value.name;
       const city = this.addForm.value.city;
       const photo = this.addForm.value.photo;

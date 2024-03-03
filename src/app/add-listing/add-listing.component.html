@@ -1,49 +1,96 @@
-<div class="add-flex">
-  <section class="add-container">
-    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
-      <h3>Add Listing</h3>
-      <label for="name">Name</label>
-      <input
-        type="text"
-        id="name"
-        formControlName="name"
-        placeholder="Apartment"
-      />
-      <label for="city">City</label>
-      <input
-        type="text"
-        id="city"
-        formControlName="city"
-        placeholder="Athens"
-      />
-      <label for="phot">Photo Url</label>
-      <input
-        type="text"
-        id="photo"
-        formControlName="photo"
-        placeholder="Photo"
-      />
-      <label for="price">Price</label>
-      <input
-        type="number"
-        id="price"
-        formControlName="price"
-        placeholder="100"
-      />
-      <div class="checkbox">
-        <label for="wifi"
-          >Wifi <input type="checkbox" id="wifi" formControlName="wifi" />
-        </label>
-        <label for="laundry"
-          >Laundry
-          <input type="checkbox" id="laundry" formControlName="laundry" />
-        </label>
-      </div>
-
-      <div>
-        <button type="submit" [disabled]="!addForm.valid">Save</button>
-        <button type="button" class="cancelBtn" [routerLink]="'/edit'">Cancel</button>
-      </div>
-    </form>
-  </section>
-</div>
+<section class="container my-4">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+      <form [formGroup]="addForm" (ngSubmit)="onSubmit()" class="mb-4">
+        <h3>Add Listing</h3>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="text"
+            id="name"
+            formControlName="name"
+            placeholder="Apartment"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="city" class="form-label">City</label>
+          <input
+            type="text"
+            id="city"
+            formControlName="city"
+            placeholder="Athens"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="photo" class="form-label">Photo Url</label>
+          <input
+            type="text"
+            id="photo"
+            formControlName="photo"
+            placeholder="Photo"
+            class="form-control"
+            (change)="updateImagePreview()"
+          />
+        </div>
+        <div class="mb-3">
+          <img
+            [src]="
+              addForm.get('photo')?.value
+                ? addForm.get('photo')?.value
+                : 'https://via.placeholder.com/300x200.png'
+            "
+            class="img-fluid"
+            alt="Image Preview"
+            width="300px"
+            height="200px"
+            style="border-radius: 4px"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="price" class="form-label">Price</label>
+          <input
+            type="number"
+            id="price"
+            formControlName="price"
+            placeholder="100"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="wifi"
+              formControlName="wifi"
+            />
+            <label class="form-check-label" for="wifi">Wifi</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="laundry"
+              formControlName="laundry"
+            />
+            <label class="form-check-label" for="laundry">Laundry</label>
+          </div>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button
+            type="submit"
+            [disabled]="!addForm.valid"
+            class="btn btn-save"
+          >
+            Save
+          </button>
+          <button type="button" class="btn btn-danger" [routerLink]="'/edit'">
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
