@@ -1,38 +1,14 @@
-.listing {
-    background-color: #a11dc520;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    padding-bottom: 30px;
-    max-width: 420px;
+
+
+a {
+    border: solid 1px #a01dc5;
+    background-color: #a01dc5;
+    color: white;
 }
 
-.listing img {
-    height: 200px;
-    width: 100%;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
 
-.listing h2 {
-    margin: 0;
-    padding: 10px;
-    color: #a11dc5;
-}
-
-.listing p {
-    padding: 10px;
-    margin: 0;
-}
-
-.listing svg {
-    color: #a11dc5;
-}
-
-.listing a {
-    padding: 10px;
-    margin: 0;
-    text-decoration: underline;
-    color: #a11dc5;
-    font-weight: bold;
-
+a:hover {
+    background: #8e1bbf;
+    color: white;
+    cursor: pointer;
 }

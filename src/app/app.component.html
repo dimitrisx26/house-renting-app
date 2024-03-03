@@ -1,29 +1,49 @@
-<header>
-  <a [routerLink]="['/']" style="cursor: pointer"
-    ><img
-      class="brand-logo"
-      src="../assets/house-logo.png"
-      loading="lazy"
-      alt="brand logo"
-      width="180px"
-      height="50px"
-  /></a>
-  <nav>
-    <ul>
-      <li>
-        <a
-          [routerLink]="['/']"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-          >Home</a
-        >
-      </li>
-      <li>
-        <a [routerLink]="['/edit']" routerLinkActive="active">Edit Listings</a>
-      </li>
-    </ul>
-  </nav>
-</header>
-<section class="content">
+<nav class="navbar navbar-expand-md bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img
+        src="../assets/house-logo.png"
+        alt="Logo"
+        width="180px"
+        height="50px"
+        class="d-inline-block align-text-top"
+      />
+    </a>
+    <button
+      class="navbar-toggler collapsed"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#menu"
+      aria-controls="menu"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="menu">
+      <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a
+            class="nav-link custom-active"
+            aria-current="page"
+            [routerLink]="['/']"
+            routerLinkActive="custom-active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="custom-active"
+            [routerLink]="['/edit']"
+            >Edit Listings</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<section class="container-fluid m-4">
   <router-outlet></router-outlet>
 </section>

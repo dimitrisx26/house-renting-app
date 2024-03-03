@@ -1,4 +1,4 @@
-input[type="text"] {
+/* input[type="text"] {
     border: solid 1px #a01dc5;
     padding: 10px;
     border-radius: 8px;
@@ -7,22 +7,11 @@ input[type="text"] {
     width: 30%;
 }
 
-input[type="text"]:focus {
-    outline-color: #8e1bbf;
-}
 
-button {
-    padding: 10px;
-    border: solid 1px #a01dc5;
-    background: #a01dc5;
-    color: white;
-    border-radius: 8px;
-}
 
-button:hover {
-    background: #8e1bbf;
-    cursor: pointer;
-}
+
+
+
 
 .listings-grid {
     padding: 20px 0;
@@ -46,5 +35,29 @@ button:hover {
 @media (min-width: 1200px) {
     .listings-grid {
         grid-template-columns: repeat(4, 1fr);
+    }
+} */
+
+div.navbar {
+    margin: 0;
+}
+
+button {
+    border: solid 1px #a01dc5;
+    background-color: #a01dc5;
+    color: white;
+}
+
+
+button:hover {
+    background: #8e1bbf;
+    color: white;
+    cursor: pointer;
+}
+
+@media (min-width: 1920px) {
+    .col-4k-2 {
+        flex: 0 0 auto;
+        width: 16%;
     }
 }
