@@ -1,24 +1,26 @@
-<div class="navbar">
-  <form class="d-flex" role="search" (ngSubmit)="filterResults()">
-    <input
-      class="form-control me-2"
-      type="search"
-      name="filter"
-      aria-label="Search"
-      placeholder="Filter by City"
-      [(ngModel)]="filterText"
-    />
-    <button class="btn" type="submit">Filter</button>
-  </form>
-</div>
-<section class="col">
-  <div
-    class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 g-4"
-  >
-    @for (listing of filteredListings; track $index) {
-      <div class="col-4k-2 col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12">
-        <app-listings [listing]="listing"></app-listings>
-      </div>
-    }
+<div class="container-fluid my-4">
+  <div class="navbar">
+    <form class="d-flex" role="search" (ngSubmit)="filterResults()">
+      <input
+        class="form-control me-2"
+        type="search"
+        name="filter"
+        aria-label="Search"
+        placeholder="Filter by City"
+        [(ngModel)]="filterText"
+      />
+      <button class="btn" type="submit">Filter</button>
+    </form>
   </div>
-</section>
+  <section class="mt-4">
+    <div
+      class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 g-4"
+    >
+      @for (listing of filteredListings; track $index) {
+        <div class="col-4k-2 col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12">
+          <app-listings [listing]="listing"></app-listings>
+        </div>
+      }
+    </div>
+  </section>
+</div>

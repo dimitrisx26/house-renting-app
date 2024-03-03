@@ -45,7 +45,7 @@ export class EditListingComponent {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private housing: HousingService
+    private housing: HousingService,
   ) {
     this.listings = this.housing.getListings();
     this.route.params.subscribe((params) => {
@@ -65,6 +65,13 @@ export class EditListingComponent {
 
   ngOnInit() {}
 
+  updateImagePreview() {
+    let photoControl = this.editForm.get('photo');
+    if (photoControl) {
+      photoControl.updateValueAndValidity();
+    }
+  }
+
   onSubmit() {
     if (this.editForm.valid) {
       const id = Number(this.route.snapshot.params['id']);
@@ -82,7 +89,7 @@ export class EditListingComponent {
 
   deleteListing() {
     const confirmation = window.confirm(
-      'Are you sure you want to delete this listing?'
+      'Are you sure you want to delete this listing?',
     );
     if (confirmation) {
       const id = Number(this.route.snapshot.params['id']);

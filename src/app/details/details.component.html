@@ -1,55 +1,70 @@
-<div class="details-flex">
-  <section class="details-container">
-    <div class="details">
-      <img
-        [src]="listing?.photo"
-        loading="lazy"
-        alt="This is the {{ listing?.name }} in {{ listing?.city }}."
-      />
-      <h2>{{ listing?.name }}</h2>
-      <p>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          class="bi bi-geo-alt-fill"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"
-          /></svg
-        >{{ listing?.city }}
-      </p>
-      <h3>About this house</h3>
-      <p>Price: {{ listing?.price }}/m</p>
-      <p>Laundry: {{ listing?.laundry }}</p>
-      <p>Wi-Fi: {{ listing?.wifi }}</p>
-      <a [routerLink]="['/']">Back to Listings</a>
+<div class="container-fluid my-4">
+  <div class="row">
+    <div class="col-12 col-md-6 mb-4">
+      <div class="card">
+        <img
+          [src]="listing?.photo"
+          loading="lazy"
+          alt="This is the {{ listing?.name }} in {{ listing?.city }}."
+          class="card-img-top"
+          style="height: 100%; max-height: 500px; object-fit: cover"
+        />
+        <div class="card-body">
+          <h4 class="card-title">{{ listing?.name }}</h4>
+          <h5 class="card-text">About this house</h5>
+          <p class="card-text"></p>
+          <p class="card-text">
+            <i class="bi bi-geo-alt-fill"></i>{{ listing?.city }}
+          </p>
+          <p class="card-text">Price: {{ listing?.price }}/m</p>
+          <p class="card-text">Laundry: {{ listing?.laundry }}</p>
+          <p class="card-text">Wi-Fi: {{ listing?.wifi }}</p>
+          <p class="card-text">
+            <a [routerLink]="['/']" class="btn">Back to Listings</a>
+          </p>
+        </div>
+      </div>
     </div>
-    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-      <h3>Apply Interest</h3>
-      <label for="name">Name</label>
-      <input
-        type="text"
-        id="name"
-        formControlName="name"
-        placeholder="John Doe"
-      />
-      <label for="email">Email</label>
-      <input
-        type="email"
-        id="email"
-        formControlName="email"
-        placeholder="example@example.com"
-      />
-      <label for="message">Message</label>
-      <textarea
-        id="message"
-        formControlName="message"
-        placeholder="Your message goes here."
-      ></textarea>
-      <button type="submit" [disabled]="!contactForm.valid">Apply now</button>
-    </form>
-  </section>
+    <div class="col-12 col-md-6">
+      <form
+        [formGroup]="contactForm"
+        (ngSubmit)="onSubmit()"
+        class="col-md-10 col-lg-8 col-xl-6 mb-4"
+      >
+        <h3 class="mb-4">Apply Interest</h3>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="text"
+            id="name"
+            formControlName="name"
+            placeholder="John Doe"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            placeholder="example@example.com"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea
+            id="message"
+            formControlName="message"
+            placeholder="Your message goes here."
+            class="form-control"
+          ></textarea>
+        </div>
+        <button type="submit" [disabled]="!contactForm.valid" class="btn">
+          Apply now
+        </button>
+      </form>
+    </div>
+  </div>
 </div>
